@@ -1,70 +1,57 @@
-# GitHub Codespaces ♥️ React
+# Hiragana KATAKANA Practice App
 
-Welcome to your shiny new Codespace running React! We've got everything fired up and running for you to explore React.
+(made with claude3 help)
+## Description
 
-You've got a blank canvas to work on from a git perspective as well. There's a single initial commit with the what you're seeing right now - where you go from here is up to you!
+The Hiragana Practice App is an interactive web application designed to help users learn and practice writing Hiragana characters. It provides a user-friendly interface for drawing characters, receiving feedback, and tracking progress.
 
-Everything you do here is contained within this one codespace. There is no repository on GitHub yet. If and when you’re ready you can click "Publish Branch" and we’ll create your repository and push up your project. If you were just exploring then and have no further need for this code then you can simply delete your codespace and it's gone forever.
+## Features
 
-This project was bootstrapped for you with [Vite](https://vitejs.dev/).
+- Interactive canvas for drawing Hiragana characters
+- Multiple practice modes: Free, Exam, and Guided
+- Adjustable difficulty levels
+- SRS (Spaced Repetition System) integration for optimized learning
+- Progress tracking and statistics
+- Character type selection (Hiragana and Katakana)
+- Customizable canvas settings
+- Audio pronunciation (planned feature)
+- Drawing similarity comparison algorithm (it is weak at the moment, redraw if you get bad feedback)
 
-## Available Scripts
+## Usage
 
-In the project directory, you can run:
+- Select your preferred practice mode (Free, Exam, or Guided)
+- Choose the difficulty level
+- Draw the displayed Hiragana character on the canvas
+- Receive feedback on your drawing
+- Progress through characters and track your improvement
 
-### `npm start`
+## Technologies Used
 
-We've already run this for you in the `Codespaces: server` terminal window below. If you need to stop the server for any reason you can just run `npm start` again to bring it back online.
+- React.js
+- HTML5 Canvas
+- Local Storage API
+- Tailwind CSS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000/](http://localhost:3000/) in the built-in Simple Browser (`Cmd/Ctrl + Shift + P > Simple Browser: Show`) to view your running application.
+## Technical Details
 
-The page will reload automatically when you make changes.\
-You may also see any lint errors in the console.
+### Similarity Algorithm
 
-### `npm test`
+The app uses a pixel-based comparison algorithm to determine the similarity between the user's drawing and the correct character:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Both the user's drawing and the correct character are rendered on separate canvases.
+2. The pixel data from both canvases is extracted.
+3. Each pixel from the user's drawing is compared with the corresponding pixel from the correct character.
+4. The number of matching pixels is counted.
+5. The similarity score is calculated as the ratio of matching pixels to total pixels.
 
-### `npm run build`
+This algorithm provides a basic measure of similarity, with higher scores indicating a closer match to the correct character. However, it has limitations:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- It's sensitive to slight positioning differences.
+- It doesn't account for stroke order or direction.
+- It may not accurately reflect human perception of similarity.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Future improvements could include more sophisticated image processing techniques or machine learning-based approaches for more accurate similarity assessment.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Internationalization
 
-## Learn More
-
-You can learn more in the [Vite documentation](https://vitejs.dev/guide/).
-
-To learn Vitest, a Vite-native testing framework, go to [Vitest documentation](https://vitest.dev/guide/)
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://sambitsahoo.com/blog/vite-code-splitting-that-works.html](https://sambitsahoo.com/blog/vite-code-splitting-that-works.html)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://github.com/btd/rollup-plugin-visualizer#rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer#rollup-plugin-visualizer)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://dev.to/hamdankhan364/simplifying-progressive-web-app-pwa-development-with-vite-a-beginners-guide-38cf](https://dev.to/hamdankhan364/simplifying-progressive-web-app-pwa-development-with-vite-a-beginners-guide-38cf)
-
-### Advanced Configuration
-
-This section has moved here: [https://vitejs.dev/guide/build.html#advanced-base-options](https://vitejs.dev/guide/build.html#advanced-base-options)
-
-### Deployment
-
-This section has moved here: [https://vitejs.dev/guide/build.html](https://vitejs.dev/guide/build.html)
-
-### Troubleshooting
-
-This section has moved here: [https://vitejs.dev/guide/troubleshooting.html](https://vitejs.dev/guide/troubleshooting.html)
+This app supports both English and Spanish languages. Users can switch between languages using the language selector at the top of the app. To add more languages:
