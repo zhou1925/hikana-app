@@ -11,11 +11,17 @@
   },
   "customizations": {
     "codespaces": {
+      "repositories": {
+          "my_org/my_repo": {
+            "permissions": "write-all"
+          }
+        },
       "openFiles": [
         "src/App.jsx"
       ]
     }
   },
+  
   "portsAttributes": {
     "3000": {
       "label": "Application",

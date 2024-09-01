@@ -146,7 +146,7 @@ function App() {
           <option value="es">Español</option>
         </select>
         {showTutorial && <Tutorial onComplete={handleTutorialComplete} />}
-        <h1 className="text-3xl font-bold mb-8 text-center">Práctica de Hiragana y Katakana</h1>
+        <h1 className="text-3xl font-bold mb-8 text-center">Hiragana y Katakana </h1>
         <div className="bg-white p-4 sm:p-8 rounded-lg shadow-md max-w-md w-full">
           <CharacterTypeSelector
             includeHiragana={includeHiragana}
